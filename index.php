@@ -1,26 +1,48 @@
 <?php declare(strict_types=1);
 
-namespace Alura;
-
-require 'autoload.php';
-
-$correntistas_e_compras = [
-    "Giovanni",
-    12,
-    "Maria",
-    25,
-    "Luis",
-    "Luísa",
-    "12"
+$correntistas1 = [
+  "Giovanni",
+  "João",
+  "Maria",
+  "Luis",
+  "Luisa",
+  "Rafael"
 ];
 
+$correntistasNaoPagantes1 = [
+  "Luis",
+  "Luisa",
+  "Rafael",
+];
+
+$correntistasPagantes = array_diff ($correntistas1, $correntistasNaoPagantes1);
+
 echo "<pre>";
+var_dump ($correntistasPagantes);
+echo "</pre>";
 
-var_dump($correntistas_e_compras);
+$correntistas = [
+  "Giovanni",
+  "João",
+  "Maria",
+  "Luis",
+  "Luisa",
+  "Rafael"
+];
 
-\Alura\ArrayUtils::remover("aGiovanni", $correntistas_e_compras);
-\Alura\ArrayUtils::remover("Giovanni", $correntistas_e_compras);
+$saldos = [
+   2500,
+   3000,
+   4400,
+   1000,
+   8700,
+   9000
+];
 
-var_dump ($correntistas_e_compras);
+$relacionados = array_combine($correntistas, $saldos);
 
+$relacionados["Matheus"] = 4500;
+
+echo "<pre>";
+var_dump ($relacionados);
 echo "</pre>";
