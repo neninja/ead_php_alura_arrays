@@ -1,20 +1,11 @@
 <?php
 
-$saldos = [
-     2500,
-     3000,
-     1000,
-     3700,
-     9000
-];
-
-foreach  ($saldos as $saldo) {
-     echo "<p>O saldo é $saldo</p>";
+$nomes = "Giovanni, João, Maria, Pedro";
+$array_nomes = explode (", ", $nomes);
+foreach ($array_nomes as $nome) {
+     echo  "<p> $nome </p>";
 }
+var_dump($array_nomes);
 
-echo "<pre>";
-
-sort($saldos);
-
-echo "O menor saldo é $saldos[0]";
-echo "</pre>";
+$nomesJuntos = implode(",", $array_nomes);
+echo $nomesJuntos;
